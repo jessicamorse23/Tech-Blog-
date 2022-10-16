@@ -1,5 +1,4 @@
-// I took this code from the module 14
-
+// module 14.28 mini project
 const Sequelize = require('sequelize');
 require('dotenv').config();
 

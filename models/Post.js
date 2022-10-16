@@ -10,8 +10,12 @@ Post.init(
     title: DataTypes.STRING,
     body: DataTypes.STRING
   },
+
   {
-    sequelize
+    sequelize,
+    timestamps: false, 
+    underscored: true, 
+    modelName: "post",
   }
 );
 
