@@ -19,6 +19,10 @@ Comment.init(
         key: 'id',
       },
 
+      comments: {
+        type: DataTypes.STRING
+      },
+      
       user_id: {
         type: DataTypes.INTEGER,
         references: {
