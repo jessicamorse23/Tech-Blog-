@@ -1,5 +1,3 @@
-// I received this code from instructional staff
-
 const { Sequelize, Model, DataTypes } = require('sequelize');
 const sequelize = require('../config /connection');
 
