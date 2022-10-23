@@ -1,6 +1,5 @@
 {{!-- // I received this code from instructional staff --}}
 
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,11 +14,17 @@
   <nav class="navbar">
     <ul>
       <li class="li-inline nav-item"><a href="/">Home</a></li>
+      {{#if logged_in}}
       <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
+       <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
+       {{else}}
       <li class="li-inline nav-item"><a href="/login">Login</a></li>
-      <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
+       <li class="li-inline nav-item"><a href="/signup">Sign Up</a></li>
+       {{/if}}
+     
     </ul>
   </nav>
+
   <header class="hero">
     <h1 class="app-title"><a href="/">The Tech Blog</a></h1>
   </header>
@@ -31,7 +36,10 @@
   <footer class="flex-row justify-center">
     &copy; The Tech Blog Folks
   </footer>
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
-<script src="/js/logout.js"></script>
+
