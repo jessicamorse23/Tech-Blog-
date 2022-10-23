@@ -22,6 +22,25 @@ const newFormHandler = async (event) => {
   }
 };
 
+const deleteButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+
+    const response = await fetch(`api/blogs/${id}`, {
+      method: 'DELETE',
+    });
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    } else {
+      alert('post could not be deleted');
+    }
+  }
+};
+
 document
 .querySelector('.new-post-form')
 .addEventListener('submit', newFormHandler);
+
+document
+.querySelector('.blog-post-list')
+.addEventListener('click', deleteButtonHandler);

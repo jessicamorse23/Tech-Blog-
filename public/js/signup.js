@@ -1,4 +1,4 @@
-const { doc } = require("prettier");
+// const { doc } = require("prettier");
 
 const signupFormHandler = async (event) => {
   event.preventDefault();
@@ -14,7 +14,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/login');
     } else {
       alert(response.status.Text);
     }
