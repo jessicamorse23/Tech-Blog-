@@ -1,35 +1,39 @@
-{{!-- // I received this code from instructional staff --}}
-<html lang="en">
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{Username}}</h2>
+  </div>
+</div>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Tech Blog</title>
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Blog Post:</h3>
+    <form class="form new-post-form">
+      <div class="form-group">
+         <input class="form-input" type="text" id="post-title" name="post-title" placeholder="Blog Post Title" />
+      </div>
+      <div class="form-group">
+        <textarea class="form-input" id="post-body" name="post-body" placeholder="Blog Post Content"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
 
-<body class="flex-column min-100-vh">
-  <nav class="navbar">
-    <ul class="flex-row">
-      <li class="li-inline nav-item"><a href="/">Home</a></li>
-      <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
-      <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
-    </ul>
-  </nav>
-  <header class="hero">
-    <h1 class="app-title"><a href="/dashboard">Your Dashboard</a></h1>
-  </header>
-
-  <main class="col-auto">
-    {{{body}}}
-  </main>
-
-  <footer class="footer flex-row justify-center">
-    <a href="/dashboard/new">➕ New Post</a>
-  </footer>
-</body>
-
-<script src="/js/logout.js"></script>
-
-</html>
+{{#if posts.length}}
+<div class="col-md-6 blog-post-list">
+  <h3>Blog Posts:</h3>
+  {{#each posts as |post|}}
+  <div class=" row mb-2">
+    div class="col-md-8">
+    <h4><a href="/post{{post.id}}">{{post.title}}</a></h4>
+  </div>
+  <div class="col-md-4">
+    <button class="btn btn-danger" data-id="{{post.id}}">Delete</button>
+  </div>
+</div>
+{{/each}}
+</div>
+{{/if}}
+</div>
+<script src="/public/js/new.js"></script>
