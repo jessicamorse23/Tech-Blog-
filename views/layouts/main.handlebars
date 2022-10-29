@@ -1,45 +1,61 @@
-{{!-- // I received this code from instructional staff --}}
-
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/style.css" /> 
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Tech Blog</title>
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+<body>
+  <div class="flex-column justify-space-around">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">A Tech Blog by Jessica</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<body class="flex-column min-100-vh">
-  <nav class="navbar">
-    <ul>
-      <li class="li-inline nav-item"><a href="/">Home</a></li>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
       {{#if logged_in}}
-      <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
-       <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
-       {{else}}
-      <li class="li-inline nav-item"><a href="/login">Login</a></li>
-       <li class="li-inline nav-item"><a href="/signup">Sign Up</a></li>
-       {{/if}}
-     
+
+      <li class="nav-item">
+        <a class="nav-link" href="/dashboard">
+          Dashboard
+        </a>
+        </li>
+        <li class="nav-item">
+          <button type="button" id="ADD LOGOUT HB HERE">Logout</button>
+        </li>
+        {{#else}}
+        <li class="nav-item">
+        <a class="nav-link" href="ADD LOGIN HB HERE">Login</a>
+      </li>
+      <li>
+        <a class="nav-link" href="ADD LOGIN HB HERE">Login</a>
+      </li >
+       <li class="nav-item">
+        <a class="nav-link" href="ADD SIGNUP HB HERE">SIGNUP</a>
+      </li>
+      {{/if}}
+
     </ul>
+  </div>
   </nav>
-
-  <header class="hero">
-    <h1 class="app-title"><a href="/">The Tech Blog</a></h1>
-  </header>
-
-  <main class="col-auto">
+  <main class="container">
     {{{body}}}
   </main>
-
-  <footer class="flex-row justify-center">
-    &copy; The Tech Blog Folks
+  <footer>
   </footer>
-  {{#if logged_in}}
-  <script src="/public/js/logout.js"></script>
-  {{/if}}
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 </body>
-
 </html>
-
